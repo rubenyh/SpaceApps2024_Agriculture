@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Data</title>
     <link rel="stylesheet" href="../static/secondarypagecss.css">  <!-- Added CSS link -->
+    <style>
+        :root {
+            --farmingScore: {{ color }}
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -47,6 +52,14 @@
                         <tr>
                             <td>Visibility (m)</td>
                             <td>{{ visibility }}</td>
+                        </tr>
+                        <tr>
+                            <td>Wind Chillness</td>
+                            <td>{{ windchill }}</td>
+                        </tr>
+                        <tr style="background-color: var(--farmingScore)">
+                            <td style="color: beige">Overall Farming Suitability Score</td>
+                            <td style="color: beige">{{ farmingScore }}</td>
                         </tr>
                     </tbody>
                 </table>

@@ -4,10 +4,9 @@ def forecast(lat,lon):
     url = "https://api.openweathermap.org/data/2.5/forecast?"
     api_key = "b05ad82a832f5da790b48645e5943fc7"
     params = {
-    #"year": "?",
     "lat": lat,
     "lon": lon,
-    "appid": api_key,   # Include your API key
+    "appid": api_key,
     }
     try:
         response = requests.get(url, params=params)
@@ -25,5 +24,23 @@ def forecast(lat,lon):
         print(f"An error occurred: {e}")
 
 
-s = forecast(39,41)
-print(s)
+def windChill(V, T):
+    V = V * 2.23694
+    T = 1.8 * (T - 273) + 32
+    R = 35.74 + (0.6215 * T)  - (35.75 * (V ** 0.16)) +0.4275 * T * (V ** 0.16)
+    if R > 50:
+        status = "No risk"
+    elif R > 40:
+        status = "Mild risk"
+    elif R > 31:
+        status = "Moderate risk"
+    elif R > 22:
+        status = "High risk"
+    elif R > 13:
+        status = "Severe risk"
+    else: 
+        status = "Critical risk"
+    R = int(R)
+    R = str(R)
+    ans = str(R + ": " + status)
+    return ans
