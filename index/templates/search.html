@@ -34,7 +34,16 @@
                                 <td>
                                     <form action="/results" method="get">
                                         <button type="submit">Search</button>
-                                        <input type="hidden" name="data" value="{{ city }}">
+                                        <!-- Pass relevant weather data as hidden inputs -->
+                                        <input type="hidden" name="name" value="{{ city['name'] }}">
+                                        <input type="hidden" name="country" value="{{ city['sys']['country'] }}">
+                                        <input type="hidden" name="state" value="{{ city['state'] }}">
+                                        <input type="hidden" name="temp" value="{{ city['main']['temp'] }}">
+                                        <input type="hidden" name="humidity" value="{{ city['main']['humidity'] }}">
+                                        <input type="hidden" name="weather" value="{{ city['weather'][0]['description'] }}">
+                                        <input type="hidden" name="wind_speed" value="{{ city['wind']['speed'] }}">
+                                        <input type="hidden" name="pressure" value="{{ city['main']['pressure'] }}">
+                                        <input type="hidden" name="visibility" value="{{ city['visibility'] }}">
                                     </form>
                                 </td>
                             </tr>

@@ -4,10 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Data</title>
+    <link rel="stylesheet" href="../static/secondarypagecss.css">  <!-- Added CSS link -->
 </head>
 <body>
-    <p>
-        {{ data }}
-    </p>
+    <div class="container">
+        <header>
+            <img src="../static/logo.png" alt="Logo" class="logo">
+            <h1>Weather Data for {{ name }}, {{ state }}, {{ country }}</h1>
+            <a href="/" class="back-button">Back</a>  <!-- Added Back button like in search.html -->
+        </header>
+        
+        <main>
+            <div class="weather-table">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Temperature (C°)</td>
+                            <td>{{ temp }}</td>
+                        </tr>
+                        <tr>
+                            <td>Humidity (%)</td>
+                            <td>{{ humidity }}</td>
+                        </tr>
+                        <tr>
+                            <td>Weather Description</td>
+                            <td>{{ weather }}</td>
+                        </tr>
+                        <tr>
+                            <td>Wind Speed (m/s)</td>
+                            <td>{{ wind_speed }}</td>
+                        </tr>
+                        <tr>
+                            <td>Pressure (hPa)</td>
+                            <td>{{ pressure }}</td>
+                        </tr>
+                        <tr>
+                            <td>Visibility (m)</td>
+                            <td>{{ visibility }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
