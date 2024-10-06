@@ -3,64 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Data Table</title>
-    <style>
-       sidebar {
-    width: 300px;
-    background-color: #5C8151; 
-    padding: 20px;
-    height: 100vh;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 18px;
-            text-align: left;
-        }
-        th, td {
-            padding: 12px;
-            border: 1px solid #f2f2f2;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-    </style>
+    <title>NyE GALAXY</title>
+    <link rel="stylesheet" href="../static/style.css"> 
 </head>
 <body>
-    <div class="sidebar"></div>
-<table>
-    <thead>
-        <tr>
-            <th>Country</th>
-            <th>Weather</th>
-            <th>Air Quality</th>
-            <th>Humidity</th>
-            <th>Average Humidity</th>
-            <th>Drought Risk</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        </tr>
-        <tr>
-        </tr>
-        <tr>
-        </tr>
-        <tr>
-        </tr>
-        <tr>
-        </tr>
-    </tbody>
-</table>
+
+    <div class="home-page">
+        <div class="overlay">
+            <div class="logo">
+                <img src="../static/logo.png" alt="Logo" />
+            </div>
+
+            <h1 class="title">NyE GALAXY</h1>
+
+
+            <div class="search-bar">
+                <form action="secondarypage.html">
+                   <input autocomplete="off" type="text" id="searchInput" placeholder="Write a name of a country, state or city">
+                </form> 
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('searchInput').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent the default form submission
+                handleSearch(); // Call the search function
+            }
+        });
+
+        function handleSearch() {
+            let query = document.getElementById('searchInput').value;
+            // Redirect to search results with query parameter
+            window.location.href = `/search-results?query=${encodeURIComponent(query)}`;
+        }
+    </script>
 
 </body>
 </html>
