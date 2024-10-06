@@ -1,18 +1,15 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #364837;
-    color: #333;
-    margin: 0;
-    padding: 0;
+    background-image: url('../static/backgroundother.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: black;
 }
 
 .container {
-    width: 80%;
-    margin-top: 4%;
-    margin-left: 8%;
-    margin-right: 8%;
-    background-color: #f0ede5;
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent background for text readability */
     padding: 20px;
+    border-radius: 8px;
 }
 
 header {
