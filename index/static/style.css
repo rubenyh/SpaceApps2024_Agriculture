@@ -1,0 +1,71 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap');
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+.home-page {
+    background-image: url('../static/backgroundhome.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Overlay for the blur effect */
+.overlay {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+    padding: 40px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px); /* Apply the blur effect */
+}
+
+
+.logo img {
+    width: 100px; 
+    margin-bottom: 20px; 
+}
+
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff; 
+    margin: 20px 0;
+    font-family: "Playwrite DE Grund", cursive;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+/* Search Bar Styling */
+.search-bar {
+    margin-top: 20px;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 300px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    color: white;
+    background-color: #4CAF50;
+    text-align: center;
+    font-size: 16px;
+
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #66afe9;
+}
+
+

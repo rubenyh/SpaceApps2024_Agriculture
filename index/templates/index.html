@@ -20,25 +20,13 @@
             <div class="search-bar">
                 <form action="secondarypage.html">
                    <input autocomplete="off" type="text" id="searchInput" placeholder="Write a name of a country, state or city">
+                   <input type="submit" value="Submit">
                 </form> 
             </div>
         </div>
     </div>
 
-    <script>
-        document.getElementById('searchInput').addEventListener('keydown', function(event) {
-            if (event.key === 'Enter') {
-                event.preventDefault(); // Prevent the default form submission
-                handleSearch(); // Call the search function
-            }
-        });
 
-        function handleSearch() {
-            let query = document.getElementById('searchInput').value;
-            // Redirect to search results with query parameter
-            window.location.href = `/search-results?query=${encodeURIComponent(query)}`;
-        }
-    </script>
 
 </body>
 </html>
