@@ -8,7 +8,9 @@ body {
 
 .container {
     width: 80%;
-    margin: 0 auto;
+    margin-top: 4%;
+    margin-left: 8%;
+    margin-right: 8%;
     background-color: #f0ede5;
     padding: 20px;
     border-radius: 10px;
@@ -45,7 +47,7 @@ h1 {
 .search-bar input {
     padding: 5px;
     font-size: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #f0ede5;
     border-radius: 5px;
     margin-right: 10px;
 }
@@ -53,7 +55,7 @@ h1 {
 .search-bar button {
     padding: 5px 10px;
     font-size: 1rem;
-    background-color: #ccc;
+    background-color: #f0ede5;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -65,7 +67,7 @@ h1 {
 
 .back-button {
     padding: 5px 10px;
-    background-color: #ccc;
+    background-color: #f0ede5;
     color: #333;
     text-decoration: none;
     border-radius: 5px;
