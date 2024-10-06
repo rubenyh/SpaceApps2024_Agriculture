@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #3b4636;
+        }
+        
+        .headerClass {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f5f4e8;
+            padding: 10px 20px;
+        }
+        
+        .logoImg {
+            height: 50px;
+            width: 50px;
+        }
+        
+        .nav-button {
+            background-color: #3b4636;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .nav-button:hover {
+            background-color: #2e392e;
+        }
+        
+        .search-bar {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #3b4636;
+            border-radius: 25px;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="headerClass">
+        <div>
+            <img src="../static/logo.png" class="logoImg" alt="Logo">
+        </div>
+        <button class="nav-button">Home Page</button>
+        <input type="text" class="search-bar" placeholder="Search a place...">
+        <button class="nav-button">Map</button>
+    </header>
+
+    <!-- Nav bar aqui -->
+    {% block content %}
+    
+        <!-- Contenido de la pagina. No anadir nada aki -->
+    {% endblock %}
+</body>
+</html>
