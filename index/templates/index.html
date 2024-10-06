@@ -3,53 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Data Table</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 18px;
-            text-align: left;
-        }
-        th, td {
-            padding: 12px;
-            border: 1px solid #dddddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-    </style>
+    <title>NyE GALAXY</title>
+    <link rel="stylesheet" href="../static/style.css"> 
 </head>
 <body>
+    <div class="home-page">
+        <div class="overlay">
+            <div class="logo">
+                <img src="../static/logo.png" alt="Logo" />
+            </div>
 
-<table>
-    <thead>
-        <tr>
-            <th>Country</th>
-            <th>Weather</th>
-            <th>Air Quality</th>
-            <th>Humidity</th>
-            <th>Average Humidity</th>
-            <th>Drought Risk</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        </tr>
-        <tr>
-        </tr>
-        <tr>
-        </tr>
-        <tr>
-        </tr>
-        <tr>
-        </tr>
-    </tbody>
-</table>
+            <h1 class="title">NyE GALAXY</h1>
 
+            <div class="search-bar">
+                <form action="/search" method="get">
+                    <input autocomplete="off" name="q" type="text" placeholder="Write a name of a country, state or city">
+                    <button type="submit">Search</button>
+                </form> 
+            </div>
+        </div>
+    </div>
 </body>
 </html>
