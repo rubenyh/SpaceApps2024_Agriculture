@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mexicali Weather</title>
+    <title>{{ city }} Weather</title>
     <link rel="stylesheet" href="../static/secondarypagecss.css">
 </head>
 <body>
     <div class="container">
         <header>
             <img src="../static/logo.png" alt="Logo" class="logo">
-            <h1>MEXICALI</h1>
+            <h1>{{ city | upper }}</h1>
             <div class="search-bar">
-                <input type="text" placeholder="Search Another City">
+                <form action="/search" method="get">
+                    <input type="text" name="q" placeholder="Search Another City">
+                    <button type="submit">Search</button>
+                </form>
             </div>
-            <a href="index.html" class="back-button">Back</a>
+            <a href="/" class="back-button">Back</a>
         </header>
 
         <main>
+            {% if data %}
             <table>
                 <thead>
                     <tr>
@@ -27,47 +31,34 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Air speed</td>
-                        <td>18 mi/h</td>
+                        <td>Air Speed</td>
+                        <td>{{ data.wind.speed }} m/s</td>
                     </tr>
                     <tr>
-                        <td>Atm pressure</td>
-                        <td>1013.25 hPa</td>
+                        <td>Atm Pressure</td>
+                        <td>{{ data.main.pressure }} hPa</td>
                     </tr>
                     <tr>
                         <td>Climate</td>
-                        <td>86°F</td>
-                    </tr>
-                    <tr>
-                        <td>Cloud data</td>
-                        <td>---</td>
+                        <td>{{ data.weather[0].description }}</td>
                     </tr>
                     <tr>
                         <td>Humidity</td>
-                        <td>---</td>
-                    </tr>
-                    <tr>
-                        <td>Max-Min Temp</td>
-                        <td>---</td>
+                        <td>{{ data.main.humidity }}%</td>
                     </tr>
                     <tr>
                         <td>Temperature</td>
-                        <td>---</td>
-                    </tr>
-                    <tr>
-                        <td>Termic sensation</td>
-                        <td>---</td>
+                        <td>{{ data.main.temp }} °C</td>
                     </tr>
                     <tr>
                         <td>Timezone</td>
-                        <td>---</td>
-                    </tr>
-                    <tr>
-                        <td>Water level</td>
-                        <td>---</td>
+                        <td>{{ data.timezone }} seconds from UTC</td>
                     </tr>
                 </tbody>
             </table>
+            {% else %}
+            <p>{{ error }}</p>
+            {% endif %}
         </main>
     </div>
 </body>
