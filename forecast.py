@@ -20,8 +20,6 @@ def forecast(lat,lon):
             if key == "list":
                 for i in value:
                     j = j + 3
-                    print(j, "hours from now")
-                    print(i)
                 return value
     except requests.exceptions.RequestException as e:
         print(f"An error occurred: {e}")
